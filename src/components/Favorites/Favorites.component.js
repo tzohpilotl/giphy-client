@@ -5,8 +5,8 @@ import './Favorites.css';
 class Favorites extends Component {
   render() {
     return (
-      <div className="Favorite-section">
-        {this.props.Favorites.map(gif => (
+      <div className="favorite-section">
+        {this.props.favorites.map(gif => (
           <Gif
             key={gif.id}
             info={gif}
