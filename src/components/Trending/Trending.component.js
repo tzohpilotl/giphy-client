@@ -9,10 +9,12 @@ class Trending extends Component {
     gifs: [],
     loading: true,
   };
+
   async componentDidMount() {
     let gifs = await getTrendingGifs();
     this.setState({ gifs: gifs.data, loading: false });
   }
+
   render() {
     const trendingGifs = this.state.gifs.map(gif => (
       <Gif
@@ -22,6 +24,7 @@ class Trending extends Component {
         favoriteIds={this.props.favoriteIds}
       />
     ));
+
     return (
       <div className="trending-section">
         {this.state.loading ? <Spinner /> : trendingGifs}

@@ -11,6 +11,7 @@ function buildRequest(endpoint) {
   return function request(urlMapping = {}) {
     const config = Object.assign(urlMapping, {
       api_key: process.env.REACT_APP_API_KEY,
+      limit: 3,
     });
     const params = buildQueryParams(config);
     const query = endpoint.concat(params);

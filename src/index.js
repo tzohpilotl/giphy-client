@@ -28,6 +28,7 @@ export default class App extends React.Component {
       favoriteIds: [],
     };
   }
+
   onFavorite = gif => {
     let favoriteIds = this.state.favoriteIds;
     let favoriteObjects = this.state.favoriteObjects;
@@ -44,16 +45,16 @@ export default class App extends React.Component {
       favoriteObjects,
     });
   };
+
   render() {
     return (
       <div>
-        {' '}
-        <Header />{' '}
+        <Header />
         <Routes
           onFavorite={this.onFavorite}
           favoriteIds={this.state.favoriteIds}
           favoriteObjects={this.state.favoriteObjects}
-        />{' '}
+        />
       </div>
     );
   }

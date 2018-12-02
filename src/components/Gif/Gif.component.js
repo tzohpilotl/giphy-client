@@ -7,6 +7,7 @@ const Gif = ({ info, onFavorite, favoriteIds }) => {
   const title = info.title;
   const imageUrl = info.images.original.url;
   const isFavorite = favoriteIds.indexOf(info.id) > -1;
+
   return (
     <div className="image-section" onClick={() => onFavorite(info)}>
       <div className="favorite-icon">
