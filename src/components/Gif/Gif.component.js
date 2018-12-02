@@ -3,14 +3,14 @@ import HeartFilled from './heart-filled.png';
 import Heart from './heart.png';
 import './Gif.css';
 
-const Gif = ({ info, onFavourite, favouriteIds }) => {
+const Gif = ({ info, onFavorite, favoriteIds }) => {
   const title = info.title;
   const imageUrl = info.images.original.url;
-  const isFavourite = favouriteIds.indexOf(info.id) > -1;
+  const isFavorite = favoriteIds.indexOf(info.id) > -1;
   return (
-    <div className="image-section" onClick={() => onFavourite(info)}>
-      <div className="favourite-icon">
-        <img src={isFavourite ? HeartFilled : Heart} alt="Heart" />
+    <div className="image-section" onClick={() => onFavorite(info)}>
+      <div className="favorite-icon">
+        <img src={isFavorite ? HeartFilled : Heart} alt="Heart" />
       </div>
       <img src={imageUrl} alt={title} />
     </div>

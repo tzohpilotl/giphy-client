@@ -3,23 +3,19 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import Random from './components/Random';
 import Trending from './components/Trending';
-import Favourites from './components/Favourites';
+import Favorites from './components/Favorites';
 import { Router } from '@reach/router';
 import Header from './components/Header';
 
-const Routes = ({ onFavourite, favouriteIds, favouriteObjects }) => (
+const Routes = ({ onFavorite, favoriteIds, favoriteObjects }) => (
   <Router>
-    <Trending path="/" onFavourite={onFavourite} favouriteIds={favouriteIds} />
-    <Random
-      path="/random"
-      onFavourite={onFavourite}
-      favouriteIds={favouriteIds}
-    />
-    <Favourites
-      path="/favourites"
-      onFavourite={onFavourite}
-      favouriteIds={favouriteIds}
-      favourites={favouriteObjects}
+    <Trending path="/" onFavorite={onFavorite} favoriteIds={favoriteIds} />
+    <Random path="/random" onFavorite={onFavorite} favoriteIds={favoriteIds} />
+    <Favorites
+      path="/Favorites"
+      onFavorite={onFavorite}
+      FavoriteIds={favoriteIds}
+      Favorites={favoriteObjects}
     />
   </Router>
 );
@@ -28,34 +24,36 @@ export default class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      favouriteObjects: [],
-      favouriteIds: [],
+      favoriteObjects: [],
+      favoriteIds: [],
     };
   }
-
-  onFavourite = gif => {
-    let favouriteIds = this.state.favouriteIds;
-    let favouriteObjects = this.state.favouriteObjects;
-    let index = favouriteIds.indexOf(gif.id);
+  onFavorite = gif => {
+    let favoriteIds = this.state.favoriteIds;
+    let favoriteObjects = this.state.favoriteObjects;
+    let index = favoriteIds.indexOf(gif.id);
     if (index === -1) {
-      favouriteIds.push(gif.id);
-      favouriteObjects.push(gif);
+      favoriteIds.push(gif.id);
+      favoriteObjects.push(gif);
     } else {
-      favouriteIds.splice(index, 1);
-      favouriteObjects.splice(index, 1);
+      favoriteIds.splice(index, 1);
+      favoriteObjects.splice(index, 1);
     }
-    this.setState({ favouriteIds, favouriteObjects });
+    this.setState({
+      favoriteIds,
+      favoriteObjects,
+    });
   };
-
   render() {
     return (
       <div>
-        <Header />
+        {' '}
+        <Header />{' '}
         <Routes
-          onFavourite={this.onFavourite}
-          favouriteIds={this.state.favouriteIds}
-          favouriteObjects={this.state.favouriteObjects}
-        />
+          onFavorite={this.onFavorite}
+          favoriteIds={this.state.favoriteIds}
+          favoriteObjects={this.state.favoriteObjects}
+        />{' '}
       </div>
     );
   }

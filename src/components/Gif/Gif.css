@@ -1,7 +1,8 @@
 .image-section {
   position: relative;
 }
-.favourite-icon {
+
+.favorite-icon {
   position: absolute;
   top: 0;
   right: 0;

@@ -8,7 +8,7 @@ const NavigationBar = () => (
     <NavLink to="/">Trending</NavLink>
 
     <NavLink to="random">Random</NavLink>
-    <NavLink to="favourites">Favourites</NavLink>
+    <NavLink to="favorites">Favorites</NavLink>
   </div>
 );
 

@@ -18,8 +18,8 @@ class Trending extends Component {
       <Gif
         key={gif.id}
         info={gif}
-        onFavourite={this.props.onFavourite}
-        favouriteIds={this.props.favouriteIds}
+        onFavorite={this.props.onFavorite}
+        favoriteIds={this.props.favoriteIds}
       />
     ));
     return (

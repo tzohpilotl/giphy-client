@@ -11,7 +11,7 @@ class Favorites extends Component {
             key={gif.id}
             info={gif}
             onFavorite={this.props.onFavorite}
-            FavoriteIds={this.props.FavoriteIds}
+            favoriteIds={this.props.favoriteIds}
           />
         ))}
       </div>
