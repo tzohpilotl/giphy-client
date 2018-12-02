@@ -8,6 +8,7 @@
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
     "react-emotion": "^9.2.12",
+    "react-redux": "^5.1.1",
     "react-scripts": "2.0.5",
     "redux": "^4.0.1"
   },
