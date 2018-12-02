@@ -4,18 +4,18 @@ exports[`Spinner component should match snapshot 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Gif
-    info={
+    gif={
       Object {
-        "data": Object {
-          "images": Object {
-            "original": Object {
-              "url": "http://thegifurl.com",
-            },
+        "id": "jj2",
+        "images": Object {
+          "original": Object {
+            "url": "http://thegifurl.com",
           },
-          "title": "My gif",
         },
+        "title": "My gif",
       }
     }
+    id="jj2"
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -30,12 +30,65 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "alt": "My gif",
-      "src": "http://thegifurl.com",
+      "children": Array [
+        <div
+          className="favorite-icon"
+        >
+          <img
+            alt="Heart"
+            src="heart.png"
+          />
+        </div>,
+        <img
+          alt="My gif"
+          src="http://thegifurl.com"
+        />,
+      ],
+      "className": "image-section",
+      "onClick": [Function],
     },
     "ref": null,
-    "rendered": null,
-    "type": "img",
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <img
+            alt="Heart"
+            src="heart.png"
+          />,
+          "className": "favorite-icon",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "alt": "Heart",
+            "src": "heart.png",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "img",
+        },
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "alt": "My gif",
+          "src": "http://thegifurl.com",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "img",
+      },
+    ],
+    "type": "div",
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
@@ -43,12 +96,65 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "alt": "My gif",
-        "src": "http://thegifurl.com",
+        "children": Array [
+          <div
+            className="favorite-icon"
+          >
+            <img
+              alt="Heart"
+              src="heart.png"
+            />
+          </div>,
+          <img
+            alt="My gif"
+            src="http://thegifurl.com"
+          />,
+        ],
+        "className": "image-section",
+        "onClick": [Function],
       },
       "ref": null,
-      "rendered": null,
-      "type": "img",
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <img
+              alt="Heart"
+              src="heart.png"
+            />,
+            "className": "favorite-icon",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "alt": "Heart",
+              "src": "heart.png",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "img",
+          },
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "alt": "My gif",
+            "src": "http://thegifurl.com",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "img",
+        },
+      ],
+      "type": "div",
     },
   ],
   Symbol(enzyme.__options__): Object {

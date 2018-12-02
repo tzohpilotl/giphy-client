@@ -1,8 +1,9 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import Random from './Random.component';
+import RandomContainer, { Random } from './Random.component';
 import Gif from '../Gif';
 import Spinner from '../Spinner';
+import Button from '../Button';
 import { getRandomGif } from '../../api';
 
 jest.mock('../../api', () => ({ getRandomGif: jest.fn() }));
@@ -26,7 +27,7 @@ describe('Random component', () => {
   });
 
   it('should fetch a new gif on mounting', () => {
-    mount(<Random />);
+    mount(<RandomContainer />);
     expect(getRandomGif).toHaveBeenCalled();
   });
 
@@ -36,14 +37,14 @@ describe('Random component', () => {
   });
 
   it('should render a gif if the component has the gif info', () => {
-    const wrRandomer = mount(<Random />);
-    wrRandomer.setState({ randomGifData });
-    expect(wrRandomer.containsMatchingElement(<Gif />)).toBe(true);
+    const wrRandomer = shallow(<Random gif={randomGifData} />);
+    const gif = wrRandomer.find(Gif);
+    expect(gif).toHaveLength(1);
   });
 
   it('should fetch a new gif if the button is clicked', () => {
-    const wrRandomer = mount(<Random />);
-    wrRandomer.find('button').simulate('click');
+    const wrRandomer = shallow(<Random />);
+    wrRandomer.find(Button).simulate('click');
     expect(getRandomGif).toHaveBeenCalled();
   });
 });

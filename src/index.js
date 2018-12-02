@@ -13,7 +13,7 @@ const Routes = () => (
   <Router>
     <Trending path="/" />
     <Random path="/random" />
-    <Favorites path="/Favorites" />
+    <Favorites path="/favorites" />
   </Router>
 );
 

@@ -6,7 +6,16 @@ import Gif from '../Gif';
 import Spinner from '../Spinner';
 import Button from '../Button';
 
-class Random extends Component {
+export const Random = ({ gif, refreshGif }) => (
+  <div className="Random">
+    <Button onClick={refreshGif} disabled={!gif}>
+      show me another one
+    </Button>
+    {gif ? <Gif id={gif.data.id} gif={gif.data} /> : <Spinner />}
+  </div>
+);
+
+class RandomContainer extends Component {
   state = {
     randomGifData: null,
   };
@@ -23,23 +32,8 @@ class Random extends Component {
 
   render() {
     const { randomGifData } = this.state;
-    return (
-      <div className="Random">
-        <Button onClick={this.refreshGif} disabled={!randomGifData}>
-          show me another one
-        </Button>
-        {randomGifData ? (
-          <Gif
-            info={randomGifData.data}
-            onFavorite={this.props.onFavorite}
-            favoriteIds={this.props.favoriteIds}
-          />
-        ) : (
-          <Spinner />
-        )}
-      </div>
-    );
+    return <Random gif={randomGifData} refreshGif={this.refreshGif} />;
   }
 }
 
-export default Random;
+export default RandomContainer;

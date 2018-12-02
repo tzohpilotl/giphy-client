@@ -10,7 +10,7 @@ describe('Favorites reducer', () => {
   describe('when a TOGGLE_FAVORITE action is created', () => {
     const id = 2;
     const toggleAction = toggleFavorite(id);
-    const populatedState = { ids: new Set(initialState.ids) };
+    const populatedState = { ...initialState, ids: new Set(initialState.ids) };
     populatedState.ids.add(id);
 
     describe('when the favorite does not exist', () => {

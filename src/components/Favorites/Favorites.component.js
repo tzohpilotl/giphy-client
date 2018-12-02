@@ -1,22 +1,21 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { connect } from 'react-redux';
+import { getFavoriteIds, getFavoritesById } from '../../store/selectors';
 import Gif from '../Gif';
 import './Favorites.css';
 
-class Favorites extends Component {
-  render() {
-    return (
-      <div className="favorite-section">
-        {this.props.favorites.map(gif => (
-          <Gif
-            key={gif.id}
-            info={gif}
-            onFavorite={this.props.onFavorite}
-            favoriteIds={this.props.favoriteIds}
-          />
-        ))}
-      </div>
-    );
-  }
-}
+const Favorites = ({ ids, favorites }) => (
+  <div className="favorite-section">
+    {ids.map(id => {
+      const gif = favorites[id];
+      return <Gif key={id} id={id} gif={gif} />;
+    })}
+  </div>
+);
 
-export default Favorites;
+const mapStateToProps = state => ({
+  ids: getFavoriteIds(state),
+  favorites: getFavoritesById(state),
+});
+
+export default connect(mapStateToProps)(Favorites);
